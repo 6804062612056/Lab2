@@ -1,25 +1,29 @@
 #include <stdio.h>
 
 int main() {
-	int a,b,c,d,am,bm,cm,dm,max,output;
+	int a,b,c,d,counta=0,countb=0,countc=0,countd=0,output;
 	a = 8;
-	b = 7;
+	b = 9;
 	c = 10;
 	d = 6;
 	
-	m1 = (a>=b) ? a : b;
-	m2 = (m1>=c) ? m1 : c;
-	max = (m2>=d) ? m2 : d;
+	(a>b) ? counta++ : NULL;
+	(a>c) ? counta++ : NULL;
+	(a>d) ? counta++ : NULL;
 	
-	am = a - max;
-	bm = b - max;
-	cm = c - max;
-	dm = d - max;
+	(b>a) ? countb++ : NULL;
+	(b>c) ? countb++ : NULL;
+	(b>d) ? countb++ : NULL;
 	
-	output = (am && (a > b || !bm) && (a > c || !cm) && (a > d || !dm)) ? a :
-	(bm && (b > a || !am) && (b > c || !cm) && (b > d || !dm)) ? b : 
-	(cm && (c > a || !am) && (c > b || !bm) && (c > d || !dm)) ? c :
-	(dm && (d > a || !am) && (d > b || !bm) && (d > c || !cm)) ? d : NULL;
+	(c>a) ? countc++ : NULL;
+	(c>b) ? countc++ : NULL;
+	(c>d) ? countc++ : NULL;
+	
+	(d>a) ? countd++ : NULL;
+	(d>b) ? countd++ : NULL;
+	(d>c) ? countd++ : NULL;
+	
+	output = (counta == 2) ? a : (countb == 2) ? b : (countc == 2) ? c : (countd == 2) ? d : 0;
 	
 	printf("%d",output);
 }
