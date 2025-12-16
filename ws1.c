@@ -2,26 +2,23 @@
 
 int main() {
 	int a,b,c,d,counta=0,countb=0,countc=0,countd=0,output;
-	a = 8;
-	b = 9;
-	c = 10;
-	d = 6;
+	scanf("%d %d %d %d",&a,&b,&c,&d);
+
+	(a>b) ? counta++ : 0;
+	(a>c) ? counta++ : 0;
+	(a>d) ? counta++ : 0;
 	
-	(a>b) ? counta++ : NULL;
-	(a>c) ? counta++ : NULL;
-	(a>d) ? counta++ : NULL;
+	(b>a) ? countb++ : 0;
+	(b>c) ? countb++ : 0;
+	(b>d) ? countb++ : 0;
 	
-	(b>a) ? countb++ : NULL;
-	(b>c) ? countb++ : NULL;
-	(b>d) ? countb++ : NULL;
+	(c>a) ? countc++ : 0;
+	(c>b) ? countc++ : 0;
+	(c>d) ? countc++ : 0;
 	
-	(c>a) ? countc++ : NULL;
-	(c>b) ? countc++ : NULL;
-	(c>d) ? countc++ : NULL;
-	
-	(d>a) ? countd++ : NULL;
-	(d>b) ? countd++ : NULL;
-	(d>c) ? countd++ : NULL;
+	(d>a) ? countd++ : 0;
+	(d>b) ? countd++ : 0;
+	(d>c) ? countd++ : 0;
 	
 	output = (counta == 2) ? a : (countb == 2) ? b : (countc == 2) ? c : (countd == 2) ? d : 0;
 	
